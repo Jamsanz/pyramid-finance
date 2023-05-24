@@ -7,19 +7,15 @@ const Accordion: React.FC<IAccordion> = (props) => {
   const [open, setOpen] = useState<boolean>(false)
   return (
     <Pressable style={styles.container} onPress={() => setOpen(!open)}>
+
+      {/* question */}
       <View style={styles.title}>
         <Text style={styles.titleText}>{props.question}</Text>
-        {
-          open ?
-            <AntDesign name="minus" size={24} color="red" />
-            :
-            <AntDesign name="plus" size={24} color="red" />
-        }
+        {open ? <AntDesign name="minus" size={24} color="red" /> : <AntDesign name="plus" size={24} color="red" />}
       </View>
-      {
-        open && 
-        <Text style={styles.description}>{props.answer}</Text>
-      }
+
+      {/* Conditionally rendered answer */}
+      {open && <Text style={styles.description}>{props.answer}</Text>}
     </Pressable>
   )
 }

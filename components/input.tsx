@@ -12,24 +12,18 @@ interface InputProps extends TextInputProps {
 const Input = ({ leftIcon, rightIcon, ...props }: InputProps, ref: React.LegacyRef<TextInput> | undefined) => {
   return (
     <View style={styles.container}>
-      {
-        leftIcon &&
-        <View>
-          {leftIcon}
-        </View>
-      }
+      {/* conditionally rendered left Icon */}
+      {leftIcon && <View> {leftIcon} </View>}
+
       <TextInput
         style={[styles.input, props.style]}
         placeholderTextColor={"#767676"}
         {...props}
         ref={ref}
       />
-      {
-        rightIcon &&
-        <View>
-          {rightIcon}
-        </View>
-      }
+
+      {/* conditionally rendered right Icon */}
+      {rightIcon && <View> {rightIcon} </View>}
     </View>
   )
 }

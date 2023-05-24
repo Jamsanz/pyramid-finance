@@ -15,27 +15,31 @@ const Help = () => {
       alwaysBounceVertical={false}
     >
       <Text style={styles.titleText}>How can we help you?</Text>
+      
+      {/* Search Input */}
       <Input
         placeholder='Enter your keyword'
         leftIcon={<SearchIcon />}
       />
+
+      {/* Horizontal ScrollView for question category */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.questionCategories}
       >
-        {
-          questionCategories?.map((category, index) => <QuestionCategoryCard key={index} {...category} />)
-        }
+        {questionCategories?.map((category, index) => <QuestionCategoryCard key={index} {...category} />)}
       </ScrollView>
+
+      {/* subheading */}
       <View style={styles.subtitle}>
         <Text style={styles.subtitleText}>Top Questions</Text>
         <Text style={styles.subtitleTextRed}>View all</Text>
       </View>
+
+      {/* Frequently asked questions */}
       <View style={styles.faqs}>
-        {
-          faqs?.map((faq, index) => <Accordion key={index} {...faq} />)
-        }
+        {faqs?.map((faq, index) => <Accordion key={index} {...faq} />)}
       </View>
     </ScrollView>
   )
@@ -75,5 +79,5 @@ const styles = StyleSheet.create({
     color: '#DF1525'
   },
   questions: {},
-  faqs: {} 
+  faqs: {}
 })
