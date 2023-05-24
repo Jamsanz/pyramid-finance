@@ -17,7 +17,7 @@ const Screens = () => {
           headerTitle: (props) => <CustomHeaderText title='Help Center' {...props} />,
           headerTitleAlign: 'center',
           headerShadowVisible: false,
-          headerLeft: () => <BackIcon />,
+          headerLeft: (props) => <BackIcon  />,
           headerRight: (props) => <SearchIcon />
         }}
       />

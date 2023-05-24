@@ -13,7 +13,7 @@ const Input = ({ leftIcon, rightIcon, ...props }: InputProps, ref: React.LegacyR
   return (
     <View style={styles.container}>
       {/* conditionally rendered left Icon */}
-      {leftIcon && <View> {leftIcon} </View>}
+      {leftIcon && leftIcon}
 
       <TextInput
         style={[styles.input, props.style]}
@@ -23,7 +23,7 @@ const Input = ({ leftIcon, rightIcon, ...props }: InputProps, ref: React.LegacyR
       />
 
       {/* conditionally rendered right Icon */}
-      {rightIcon && <View> {rightIcon} </View>}
+      {rightIcon && rightIcon}
     </View>
   )
 }
